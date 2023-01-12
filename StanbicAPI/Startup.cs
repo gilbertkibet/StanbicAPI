@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.OpenApi.Models;
+using StanbicAPI.ApiDbContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace StanbicAPI
 {
@@ -28,7 +30,7 @@ namespace StanbicAPI
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers().AddXmlSerializerFormatters();
+            services.AddControllers();//.AddXmlSerializerFormatters();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -39,8 +41,8 @@ namespace StanbicAPI
                 });
             }
             );
-            
-            
+
+            services.AddDbContextPool<NotificationDbContext>(builder => builder.UseSqlServer(Configuration.GetConnectionString("NotificationConnectionString")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

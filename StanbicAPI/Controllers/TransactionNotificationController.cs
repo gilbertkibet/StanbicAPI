@@ -14,9 +14,6 @@ using System.Xml.Serialization;
 namespace StanbicAPI.Controllers
 {
 
-    [ApiController]
-
-    [Route("api/[controller]")]
 
     public class TransactionNotificationController : ControllerBase
     {
@@ -40,11 +37,12 @@ namespace StanbicAPI.Controllers
             request.AddHeader("accept", "application/xml");
             request.AddXmlBody(transactionRequestObject);
             request.RequestFormat = DataFormat.Xml;
+
             RestResponse response = null;
+
             try
             {
              response = client.Execute(request);
-
             }
             catch(Exception ex)
             {

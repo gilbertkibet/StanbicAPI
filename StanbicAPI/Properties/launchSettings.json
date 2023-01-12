@@ -20,7 +20,7 @@
     "StanbicAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "TransactionNotification",
+      "launchUrl": "BankNotification",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
