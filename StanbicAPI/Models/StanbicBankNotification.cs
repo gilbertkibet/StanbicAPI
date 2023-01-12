@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace StanbicAPI.Models
 {
-    public class BankNotification
+    public class StanbicBankNotification
     {
         public Guid Id { get; set; } 
 

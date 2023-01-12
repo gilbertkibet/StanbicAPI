@@ -11,7 +11,9 @@ namespace StanbicAPI.ApiDbContext
     {
         public NotificationDbContext(DbContextOptions<NotificationDbContext> options) : base(options) { }
 
-        public DbSet<BankNotification> BankNotifications { get; set; }
+        public DbSet<StanbicBankNotification> StanbicBankNotifications { get; set; }
+
+        public DbSet<KcbBankBillNotification> KcbBillNotifications { get; set; }
 
     }
 }

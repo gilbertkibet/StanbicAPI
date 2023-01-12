@@ -3,74 +3,23 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StanbicAPI.ApiDbContext;
 
 namespace StanbicAPI.Migrations
 {
     [DbContext(typeof(NotificationDbContext))]
-    partial class NotificationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230112082242_Stanbic")]
+    partial class Stanbic
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.32")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("StanbicAPI.Models.KcbBankBillNotification", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Balance")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ChannelCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CreditAccountIdentifier")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Currency")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerMobileNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerReference")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Narration")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OrganizationShortCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RequestId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TillNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Timestamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TransactionAmount")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TransactionReference")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("KcbBillNotifications");
-                });
 
             modelBuilder.Entity("StanbicAPI.Models.StanbicBankNotification", b =>
                 {
